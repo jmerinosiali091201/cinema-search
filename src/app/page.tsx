@@ -18,10 +18,12 @@ export default async function Home(props: {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
       <h1>Busca tus pelis favoritas</h1>
-      <Search />
+      <div className="mb-4">
+        <Search />
+      </div>
       <Grid>
         {data?.map((movie: Movie) => {
-          return (<Card title={movie.title} year={movie.year} image={movie.poster} type={movie.type} key={movie.id} />)
+          return (<Card title={movie.title} year={movie.year} image={movie.poster} key={movie.id} />)
         })}
       </Grid>
 
